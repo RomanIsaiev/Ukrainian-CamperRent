@@ -4,7 +4,7 @@ export default function Adverts() {
   return (
     <>
       <div>
-        <h1>List</h1>
+        <h2>List</h2>
         <AdvertsList />
       </div>
     </>

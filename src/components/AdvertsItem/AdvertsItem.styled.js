@@ -97,6 +97,10 @@ export const PriceFavoriteBox = styled.div`
   position: absolute;
   top: 24px;
   right: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
 `;
 
 export const Price = styled.p`
