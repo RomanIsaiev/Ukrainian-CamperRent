@@ -18,10 +18,46 @@ import {
   CategoryBox,
   CategoryText,
   Button,
+  FavButton,
+  FavIcon,
 } from "./AdvertsItem.styled";
 import sprite from "../../assets/sprite.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { addFavorite, removeFavorite } from "../../redux/adverts/favoriteSlice";
 
 export const AdvertsItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favorites.items);
+  const [isFavorite, setIsFavorite] = useState(
+    favorites.some((fav) => fav._id === item._id)
+  );
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setIsFavorite(storedFavorites.some((fav) => fav._id === item._id));
+  }, [item._id, favorites]);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(item._id));
+      setIsFavorite(false);
+      const storedFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
+      const newFavorites = storedFavorites.filter(
+        (fav) => fav._id !== item._id
+      );
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+    } else {
+      dispatch(addFavorite(item)); // Передаем объект item целиком
+      setIsFavorite(true);
+      const storedFavorites =
+        JSON.parse(localStorage.getItem("favorites")) || [];
+      storedFavorites.push(item);
+      localStorage.setItem("favorites", JSON.stringify(storedFavorites));
+    }
+  };
+
   return (
     <>
       <Item key={item._id}>
@@ -31,6 +67,17 @@ export const AdvertsItem = ({ item }) => {
         <InfoBox>
           <PriceFavoriteBox>
             <Price>€{parseFloat(item.price).toFixed(2)}</Price>
+            <FavButton onClick={handleFavoriteClick}>
+              {isFavorite ? (
+                <FavIcon>
+                  <use href={`${sprite}#pressed`}></use>
+                </FavIcon>
+              ) : (
+                <FavIcon>
+                  <use href={`${sprite}#unpressed`}></use>
+                </FavIcon>
+              )}
+            </FavButton>
           </PriceFavoriteBox>
           <Name>{item.name}</Name>
           <RatingLocationContainer>

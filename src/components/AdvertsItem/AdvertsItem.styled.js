@@ -182,3 +182,15 @@ export const Button = styled.button`
   max-width: 166px;
   width: 100%;
 `;
+
+// favorite button
+
+export const FavButton = styled.button`
+  background: none;
+  border: none;
+`;
+
+export const FavIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+`;
