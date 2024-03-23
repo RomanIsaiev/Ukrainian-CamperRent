@@ -16,15 +16,19 @@ const advertsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    page: 1, // Добавляем поле page в состояние
+    page: 1, // Добавляем состояние для отслеживания номера текущей страницы
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAdverts.pending, handlePending)
       .addCase(fetchAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.items = [...state.items, ...action.payload];
-        state.page += 1; // Увеличиваем страницу после успешной загрузки
+        if (action.payload.page === 1) {
+          state.items = action.payload.data; // Если это первая страница, заменяем объявления
+        } else {
+          state.items = [...state.items, ...action.payload.data]; // Иначе добавляем дополнительные объявления
+        }
+        state.page = action.payload.page; // Обновляем номер страницы
       })
       .addCase(fetchAdverts.rejected, handleRejected);
   },

@@ -10,9 +10,14 @@ export const AdvertsList = () => {
   const responseAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(fetchAdverts({ page, limit })); // Загрузка начальной порции объявлений при первом рендере
+  }, []); // Пустой массив зависимостей, чтобы эффект выполнился только один раз
+
   const handleLoadMore = () => {
-    setPage(page + 1);
-    dispatch(fetchAdverts({ page, limit }));
+    const nextPage = page + 1;
+    dispatch(fetchAdverts({ page: nextPage, limit }));
+    setPage(nextPage);
   };
 
   return (
@@ -23,7 +28,10 @@ export const AdvertsList = () => {
         ))}
       </List>
 
-      <button onClick={handleLoadMore}>Load More</button>
+      {responseAdverts.length >= page * limit &&
+        responseAdverts.length % limit === 0 && (
+          <button onClick={handleLoadMore}>Load More</button>
+        )}
     </div>
   );
 };
