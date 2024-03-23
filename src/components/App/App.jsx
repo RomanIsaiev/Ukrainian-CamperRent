@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useOutlet, useOutletContext } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { AppLayout } from "../AppLayout/AppLayout";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
@@ -18,8 +18,14 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />
           <Route path="catalog" element={<Adverts />}>
-            <Route path="features" element={<FeaturesBlock />} />
-            <Route path="reviews" element={<ReviewsBlock />} />
+            <Route
+              path="features"
+              element={<FeaturesBlock item={useOutletContext()} />}
+            />
+            <Route
+              path="reviews"
+              element={<ReviewsBlock item={useOutletContext()} />}
+            />
           </Route>
           <Route path="favorites" element={<Favorites />} />
           <Route path="*" element={<NotFoundPage />} />

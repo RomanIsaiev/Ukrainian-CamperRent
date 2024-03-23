@@ -11,8 +11,8 @@ export const AdvertsList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAdverts({ page, limit })); // Загрузка начальной порции объявлений при первом рендере
-  }, []); // Пустой массив зависимостей, чтобы эффект выполнился только один раз
+    dispatch(fetchAdverts({ page, limit }));
+  }, []);
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
