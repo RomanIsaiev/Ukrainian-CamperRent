@@ -80,6 +80,7 @@ export const ItemDetails = ({ item, onClose }) => {
             </li>
           </ul>
         </div>
+        <Outlet />
       </div>
       <CloseBtn onClick={onClose}>
         <CloseBtnIcon>

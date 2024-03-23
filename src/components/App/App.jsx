@@ -1,10 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { AppLayout } from "../AppLayout/AppLayout";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const Adverts = lazy(() => import("../../pages/AdvertsList/Adverts.jsx"));
 const Favorites = lazy(() => import("../../pages/FavoritesList/Favorites.jsx"));
+const FeaturesBlock = lazy(() =>
+  import("../../pages/Features/FeaturesBlock.jsx")
+);
+const ReviewsBlock = lazy(() => import("../../pages/Reviews/ReviewsBlock.jsx"));
 
 function App() {
   return (
@@ -12,8 +17,12 @@ function App() {
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="catalog" element={<Adverts />} />
+          <Route path="catalog" element={<Adverts />}>
+            <Route path="features" element={<FeaturesBlock />} />
+            <Route path="reviews" element={<ReviewsBlock />} />
+          </Route>
           <Route path="favorites" element={<Favorites />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </Suspense>
