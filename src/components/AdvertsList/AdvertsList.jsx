@@ -6,7 +6,7 @@ import { List } from "./AdvertsList.styled.js";
 
 export const AdvertsList = () => {
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit] = useState(4);
   const responseAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
 
