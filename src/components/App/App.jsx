@@ -28,7 +28,7 @@ function App() {
             />
           </Route>
           <Route path="favorites" element={<Favorites />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </Suspense>
