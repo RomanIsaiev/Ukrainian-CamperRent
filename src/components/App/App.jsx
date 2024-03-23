@@ -26,7 +26,17 @@ function App() {
               element={<ReviewsBlock item={useOutletContext()} />}
             />
           </Route>
-          <Route path="favorites" element={<Favorites />} />
+          <Route path="favorites" element={<Favorites />}>
+            {" "}
+            <Route
+              path="features"
+              element={<FeaturesBlock item={useOutletContext()} />}
+            />
+            <Route
+              path="reviews"
+              element={<ReviewsBlock item={useOutletContext()} />}
+            />
+          </Route>
           <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>

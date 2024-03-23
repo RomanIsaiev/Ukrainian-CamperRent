@@ -1,7 +1,6 @@
 import { Item, List, MainContainer, Title } from "./VehicleDetails.styled";
 
 export const VehicleDetails = ({ item }) => {
-  console.log(item);
   return (
     <MainContainer>
       <Title>Vehicle details</Title>
