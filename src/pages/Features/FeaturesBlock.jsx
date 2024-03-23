@@ -1,11 +1,12 @@
+import { useOutletContext } from "react-router-dom";
 import { Features } from "../../components/Features/Features";
 
 export default function FeaturesBlock() {
+  const item = useOutletContext();
   return (
     <>
       <div>
-        <h3>Features</h3>
-        <Features />
+        <Features item={item} />
       </div>
     </>
   );

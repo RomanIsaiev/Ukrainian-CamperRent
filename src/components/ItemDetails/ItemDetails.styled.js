@@ -86,6 +86,8 @@ export const Desc = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 24px; /* 150% */
+
+  margin-bottom: 44px;
 `;
 
 //
@@ -214,4 +216,19 @@ export const CloseBtnIcon = styled.svg`
   width: 24px;
   height: 24px;
   stroke: #101010;
+`;
+
+export const ScrollBox = styled.div`
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 720px;
+  width: 100%;
+  padding-bottom: 40px;
+`;
+
+export const NavList = styled.ul`
+  display: flex;
+  gap: 40px;
+
+  margin-bottom: 44px;
 `;

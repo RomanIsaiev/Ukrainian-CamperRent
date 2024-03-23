@@ -59,4 +59,8 @@ export const GlobalStyle = createGlobalStyle`
      button {
         cursor: pointer;
     }
+
+    .disable-scroll {
+        overflow: hidden;
+    }
 `;

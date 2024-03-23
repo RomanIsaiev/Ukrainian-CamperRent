@@ -25,6 +25,8 @@ import {
   CloseBtn,
   CloseBtnIcon,
   Modal,
+  ScrollBox,
+  NavList,
 } from "./ItemDetails.styled";
 
 import sprite from "../../assets/sprite.svg";
@@ -56,7 +58,7 @@ export const ItemDetails = ({ item, onClose }) => {
       <div>
         <Price>€{parseFloat(item.price).toFixed(2)}</Price>
       </div>
-      <div>
+      <ScrollBox>
         <div>
           <Gallery>
             {item.gallery.map((image, index) => (
@@ -72,17 +74,17 @@ export const ItemDetails = ({ item, onClose }) => {
           <Desc>{item.description}</Desc>
         </div>
         <div>
-          <ul>
+          <NavList>
             <li>
               <NavLink to="features">features</NavLink>
             </li>
             <li>
               <NavLink to="reviews">reviews</NavLink>
             </li>
-          </ul>
+          </NavList>
         </div>
         <Outlet context={item} />
-      </div>
+      </ScrollBox>
       <CloseBtn onClick={onClose}>
         <CloseBtnIcon>
           <use href={`${sprite}#close-modal`}></use>

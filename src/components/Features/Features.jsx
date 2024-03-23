@@ -1,9 +1,13 @@
 import { FeaturesList } from "../FeaturesList/FeaturesList";
+import { VehicleDetails } from "../VehicleDetails/VehicleDetails";
 
 export const Features = ({ item }) => {
   return (
     <div>
-      <FeaturesList item={item} />
+      <div>
+        <FeaturesList item={item} />
+        <VehicleDetails item={item} />
+      </div>
     </div>
   );
 };
