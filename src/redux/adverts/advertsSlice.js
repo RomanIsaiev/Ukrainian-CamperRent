@@ -22,8 +22,8 @@ const advertsSlice = createSlice({
       .addCase(fetchAdverts.pending, handlePending)
       .addCase(fetchAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.error = null;
-        state.items = action.payload;
+        state.items = [...state.items, ...action.payload];
+        state.page += 1; // Увеличиваем страницу после успешной загрузки
       })
       .addCase(fetchAdverts.rejected, handleRejected);
   },

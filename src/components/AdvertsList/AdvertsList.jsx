@@ -5,17 +5,14 @@ import { AdvertsItem } from "../AdvertsItem/AdvertsItem.jsx";
 import { List } from "./AdvertsList.styled.js";
 
 export const AdvertsList = () => {
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(4);
   const responseAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
-  const [page, setPage] = useState(1);
-  const [itemsPerPage] = useState(4); // Количество объявлений на странице
-
-  useEffect(() => {
-    dispatch(fetchAdverts({ page, itemsPerPage }));
-  }, [dispatch, page, itemsPerPage]);
 
   const handleLoadMore = () => {
     setPage(page + 1);
+    dispatch(fetchAdverts({ page, limit }));
   };
 
   return (
@@ -25,9 +22,8 @@ export const AdvertsList = () => {
           <AdvertsItem key={item._id} item={item} />
         ))}
       </List>
-      {responseAdverts.length >= itemsPerPage && (
-        <button onClick={handleLoadMore}>Load More</button>
-      )}
+
+      <button onClick={handleLoadMore}>Load More</button>
     </div>
   );
 };
