@@ -25,6 +25,8 @@ import sprite from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { addFavorite, removeFavorite } from "../../redux/adverts/favoriteSlice";
+import { ModalWindow } from "../ModalWindow/ModalWindow";
+import { ItemDetails } from "../ItemDetails/ItemDetails";
 
 export const AdvertsItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ export const AdvertsItem = ({ item }) => {
   const [isFavorite, setIsFavorite] = useState(
     favorites.some((fav) => fav._id === item._id)
   );
+  const [isModalOpen, setIsModal] = useState(false);
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -155,9 +158,16 @@ export const AdvertsItem = ({ item }) => {
               ) : null}
             </CategoryList>
           </div>
-          <Button>Show more</Button>
+          <Button type="button" onClick={() => setIsModal(true)}>
+            Show more
+          </Button>
         </InfoBox>
       </Item>
+      {isModalOpen && (
+        <ModalWindow isOpen={isModalOpen} onClose={() => setIsModal(false)}>
+          <ItemDetails item={item} onClose={() => setIsModal(false)} />
+        </ModalWindow>
+      )}
     </>
   );
 };

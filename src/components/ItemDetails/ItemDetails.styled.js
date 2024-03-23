@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+export const Modal = styled.div`
+  position: relative;
+`;
+
 export const RatingLocationContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
 
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 `;
 
 export const RateLocInnerBox = styled.div`
@@ -39,19 +43,14 @@ export const RateLocText = styled.p`
 
 //
 
-export const Item = styled.li`
-  position: relative;
+// gallerylist
 
+export const Gallery = styled.ul`
   display: flex;
-  flex-direction: row;
-  gap: 24px;
+  align-items: center;
+  gap: 16px;
 
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid rgba(16, 24, 40, 0.2);
-  background: #fff;
-
-  max-width: 888px;
+  margin-bottom: 24px;
 `;
 
 export const ImageBox = styled.div`
@@ -62,8 +61,8 @@ export const ImageBox = styled.div`
 export const Image = styled.img`
   border-radius: 10px;
   object-fit: cover;
-  width: 290px;
-  height: 310px;
+  width: 100%;
+  height: 100%;
 `;
 
 export const InfoBox = styled.div`
@@ -80,10 +79,7 @@ export const DescContainer = styled.div`
 `;
 
 export const Desc = styled.p`
-  overflow: hidden;
   color: #475467;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 
   font-family: Inter;
   font-size: 16px;
@@ -111,6 +107,8 @@ export const Price = styled.p`
   font-style: normal;
   font-weight: 600;
   line-height: 30px; /* 125% */
+
+  margin-bottom: 24px;
 `;
 
 //
@@ -124,7 +122,7 @@ export const Name = styled.h3`
   font-weight: 600;
   line-height: 30px; /* 125% */
 
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 `;
 
 //
@@ -194,4 +192,26 @@ export const FavButton = styled.button`
 export const FavIcon = styled.svg`
   width: 24px;
   height: 24px;
+`;
+
+// close button
+
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  background: none;
+  border: none;
+`;
+
+export const CloseBtnIcon = styled.svg`
+  width: 24px;
+  height: 24px;
+  stroke: #101010;
 `;

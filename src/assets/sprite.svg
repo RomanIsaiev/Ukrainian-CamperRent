@@ -92,5 +92,9 @@
     <symbol id="star" viewBox="0 0 32 32">
       <path fill="#ffc531" stroke="#ffc531" stroke-width="2.4" d="M12.4 9.394 16 2.572l3.6 6.822a2.2 2.2 0 0 0 1.571 1.141l7.601 1.315-5.376 5.532a2.2 2.2 0 0 0-.6 1.846l1.098 7.635-6.922-3.404a2.199 2.199 0 0 0-1.941 0l-6.922 3.404 1.098-7.635a2.2 2.2 0 0 0-.6-1.846L3.231 11.85l7.601-1.315a2.202 2.202 0 0 0 1.571-1.141z" style="fill:var(--color1, #ffc531);stroke:var(--color1, #ffc531)"/>
     </symbol>
+    <symbol id="close-modal" viewBox="0 0 32 32">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M24 8l-16 16"></path>
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3" d="M8 8l16 16"></path>
+    </symbol>
   </defs>
 </svg>
