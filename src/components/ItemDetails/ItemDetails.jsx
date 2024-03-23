@@ -20,7 +20,6 @@ import sprite from "../../assets/sprite.svg";
 import { NavLink, Outlet } from "react-router-dom";
 
 export const ItemDetails = ({ item, onClose }) => {
-  console.log(item);
   return (
     <Modal>
       <div>

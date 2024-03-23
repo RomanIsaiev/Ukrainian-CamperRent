@@ -1,9 +1,10 @@
-import { HeaderNav } from "./HeaderNav";
+import { HeaderNav } from "./HeaderNav/HeaderNav";
+import { HeaderContainer } from "./Header.styled";
 
 export const Header = () => {
   return (
-    <div>
+    <HeaderContainer>
       <HeaderNav />
-    </div>
+    </HeaderContainer>
   );
 };

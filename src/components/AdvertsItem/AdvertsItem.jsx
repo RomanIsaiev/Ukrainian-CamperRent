@@ -27,6 +27,7 @@ import { useEffect, useState } from "react";
 import { addFavorite, removeFavorite } from "../../redux/adverts/favoriteSlice";
 import { ModalWindow } from "../ModalWindow/ModalWindow";
 import { ItemDetails } from "../ItemDetails/ItemDetails";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AdvertsItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -35,6 +36,29 @@ export const AdvertsItem = ({ item }) => {
     favorites.some((fav) => fav._id === item._id)
   );
   const [isModalOpen, setIsModal] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleModalClose = () => {
+    setIsModal(false);
+    if (location.pathname.startsWith("/favorites")) {
+      navigate("/favorites");
+    } else {
+      navigate("/catalog");
+    }
+  };
+
+  const handleShowMoreClick = () => {
+    setIsModal(true);
+    if (location.pathname.startsWith("/catalog")) {
+      navigate("/catalog/features");
+    } else if (location.pathname.startsWith("/favorites")) {
+      navigate("/favorites/features");
+    } else {
+      navigate("/catalog");
+    }
+  };
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -158,14 +182,14 @@ export const AdvertsItem = ({ item }) => {
               ) : null}
             </CategoryList>
           </div>
-          <Button type="button" onClick={() => setIsModal(true)}>
+          <Button type="button" onClick={handleShowMoreClick}>
             Show more
           </Button>
         </InfoBox>
       </Item>
       {isModalOpen && (
-        <ModalWindow isOpen={isModalOpen} onClose={() => setIsModal(false)}>
-          <ItemDetails item={item} onClose={() => setIsModal(false)} />
+        <ModalWindow isOpen={isModalOpen} onClose={handleModalClose}>
+          <ItemDetails item={item} onClose={handleModalClose} />
         </ModalWindow>
       )}
     </>
