@@ -16,6 +16,7 @@ const advertsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
+    page: 1, // Добавляем поле page в состояние
   },
   extraReducers: (builder) => {
     builder
