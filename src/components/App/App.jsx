@@ -1,7 +1,6 @@
-import { Route, Routes, useOutlet, useOutletContext } from "react-router-dom";
+import { Route, Routes, useOutletContext } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { AppLayout } from "../AppLayout/AppLayout";
-import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const Adverts = lazy(() => import("../../pages/AdvertsList/Adverts.jsx"));
