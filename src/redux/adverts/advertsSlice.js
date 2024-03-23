@@ -16,7 +16,7 @@ const advertsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    page: 1, // Добавляем состояние для отслеживания номера текущей страницы
+    page: 1,
   },
   extraReducers: (builder) => {
     builder
@@ -24,11 +24,17 @@ const advertsSlice = createSlice({
       .addCase(fetchAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         if (action.payload.page === 1) {
-          state.items = action.payload.data; // Если это первая страница, заменяем объявления
+          state.items = action.payload.data;
         } else {
-          state.items = [...state.items, ...action.payload.data]; // Иначе добавляем дополнительные объявления
+          const uniqueItems = action.payload.data.filter(
+            (newItem) =>
+              !state.items.some(
+                (existingItem) => existingItem._id === newItem._id
+              )
+          );
+          state.items = [...state.items, ...uniqueItems];
         }
-        state.page = action.payload.page; // Обновляем номер страницы
+        state.page = action.payload.page;
       })
       .addCase(fetchAdverts.rejected, handleRejected);
   },

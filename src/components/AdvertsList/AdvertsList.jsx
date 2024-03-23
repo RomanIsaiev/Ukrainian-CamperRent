@@ -12,7 +12,7 @@ export const AdvertsList = () => {
 
   useEffect(() => {
     dispatch(fetchAdverts({ page, limit }));
-  }, []);
+  }, [dispatch, limit, page]);
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
