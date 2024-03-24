@@ -1,7 +1,6 @@
 import { Route, Routes, useOutletContext } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { AppLayout } from "../AppLayout/AppLayout";
-import { GlobalStyle } from "../../GlobalStyles.js";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const Adverts = lazy(() => import("../../pages/AdvertsList/Adverts.jsx"));
@@ -14,7 +13,6 @@ const ReviewsBlock = lazy(() => import("../../pages/Reviews/ReviewsBlock.jsx"));
 function App() {
   return (
     <Suspense>
-      <GlobalStyle />
       <Routes>
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />

@@ -21,7 +21,6 @@ export const AdvertsList = () => {
     dispatch(fetchAdverts({ page, limit }));
   }, [dispatch, limit, page]);
 
-  // Фильтруем объявления на основе фильтра
   const filteredAdverts = allAdverts.filter((advert) =>
     advert.location.toLowerCase().includes(locationFilter.toLowerCase())
   );
