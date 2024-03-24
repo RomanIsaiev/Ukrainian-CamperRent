@@ -58,6 +58,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
       .active {
-          border: 2px solid red;
+          border: 2px solid #E44848;
         }
 `;
