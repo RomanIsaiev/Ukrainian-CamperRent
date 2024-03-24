@@ -2,7 +2,6 @@ import {
   RatingLocationContainer,
   RateLocInnerBox,
   RateLocText,
-  RatingLocationIcon,
   Image,
   ImageBox,
   Desc,
@@ -14,6 +13,8 @@ import {
   Modal,
   ScrollBox,
   NavList,
+  StarIcon,
+  PinIcon,
 } from "./ItemDetails.styled";
 
 import sprite from "../../assets/sprite.svg";
@@ -27,17 +28,17 @@ export const ItemDetails = ({ item, onClose }) => {
       </div>
       <RatingLocationContainer>
         <RateLocInnerBox>
-          <RatingLocationIcon>
+          <StarIcon>
             <use href={`${sprite}#star`}></use>
-          </RatingLocationIcon>
+          </StarIcon>
           <RateLocText>
             {item.rating} ({item.reviews.length} Reviews)
           </RateLocText>
         </RateLocInnerBox>
         <RateLocInnerBox>
-          <RatingLocationIcon>
+          <PinIcon>
             <use href={`${sprite}#map-pin`}></use>
-          </RatingLocationIcon>
+          </PinIcon>
           <p>{item.location}</p>
         </RateLocInnerBox>
       </RatingLocationContainer>

@@ -1,8 +1,12 @@
+import { useOutletContext } from "react-router-dom";
+import { ReviewsList } from "../../components/Reviews/ReviewsList/ReviewsList";
+
 export default function ReviewsBlock() {
+  const item = useOutletContext();
   return (
     <>
       <div>
-        <h3>reviews</h3>
+        <ReviewsList item={item} />
       </div>
     </>
   );

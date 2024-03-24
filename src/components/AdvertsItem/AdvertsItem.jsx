@@ -2,7 +2,7 @@ import {
   RatingLocationContainer,
   RateLocInnerBox,
   RateLocText,
-  RatingLocationIcon,
+  StarIcon,
   CategoriesIcon,
   Item,
   Image,
@@ -20,6 +20,7 @@ import {
   Button,
   FavButton,
   FavIcon,
+  PinIcon,
 } from "./AdvertsItem.styled";
 import sprite from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -109,17 +110,17 @@ export const AdvertsItem = ({ item }) => {
           <Name>{item.name}</Name>
           <RatingLocationContainer>
             <RateLocInnerBox>
-              <RatingLocationIcon>
+              <StarIcon>
                 <use href={`${sprite}#star`}></use>
-              </RatingLocationIcon>
+              </StarIcon>
               <RateLocText>
                 {item.rating} ({item.reviews.length} Reviews)
               </RateLocText>
             </RateLocInnerBox>
             <RateLocInnerBox>
-              <RatingLocationIcon>
+              <PinIcon>
                 <use href={`${sprite}#map-pin`}></use>
-              </RatingLocationIcon>
+              </PinIcon>
               <p>{item.location}</p>
             </RateLocInnerBox>
           </RatingLocationContainer>

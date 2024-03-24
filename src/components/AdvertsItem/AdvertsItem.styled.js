@@ -15,7 +15,14 @@ export const RateLocInnerBox = styled.div`
   gap: 4px;
 `;
 
-export const RatingLocationIcon = styled.svg`
+export const StarIcon = styled.svg`
+  fill: #ffc531;
+  stroke: #ffc531;
+  width: 16px;
+  height: 16px;
+`;
+
+export const PinIcon = styled.svg`
   width: 16px;
   height: 16px;
 `;
