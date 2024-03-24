@@ -36,19 +36,10 @@ This project is a web application developed for a company providing camper renta
 
 ## Additional Task
 
-- **Deployment**: The project is deployed on [Netlify](https://ukrainian-camperrent.netlify.app/).
+- **Deployment**: The project is deployed on Netlify [https://ukrainian-camperrent.netlify.app/](https://ukrainian-camperrent.netlify.app/).
 
-## Usage
+### More photos of the project
 
-1. Clone the repository.
-2. Install dependencies using `npm install`.
-3. Start the development server using `npm start`.
-4. Access the application via the provided URL or navigate to `http://localhost:3000` in your browser.
+![Catalog](./src/images/project-preview/Catalog.png)
 
-## Contribution
-
-Contributions to the project are welcome. Feel free to submit bug fixes, feature enhancements, or any other improvements via pull requests.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+![Favorites](./src/images/project-preview/Favorites.png)
