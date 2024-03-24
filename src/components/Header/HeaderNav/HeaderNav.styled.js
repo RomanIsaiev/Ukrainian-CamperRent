@@ -3,8 +3,13 @@ import styled from "styled-components";
 export const List = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: flex-start;
+  gap: 100px;
+
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 64px;
+  padding-right: 64px;
 `;
 
 export const Item = styled.li`

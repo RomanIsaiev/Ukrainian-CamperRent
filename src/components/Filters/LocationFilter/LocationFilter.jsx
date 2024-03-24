@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 
 export const LocationFilter = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
-  const dispatch = useDispatch();
 
   const handleFilterChange = (event) => {
     const newLocation = event.target.value;

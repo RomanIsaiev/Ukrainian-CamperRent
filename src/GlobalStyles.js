@@ -23,17 +23,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .container {
-        width: ${theme.breakpoint.sm};
-        padding: 0 20px;
+        width: 1440px;
+        padding-left: 64px;
+        padding-right: 64px;
         margin: 0 auto;
-        @media (min-width: ${theme.breakpoint.md}) {
-            width: ${theme.breakpoint.md};
-            padding: 0 32px;
-        }
-        @media (min-width: ${theme.breakpoint.xl}) {
-            width: ${theme.breakpoint.xl};
-            padding: 0 96px;
-        }
+       
     }
 
     a {

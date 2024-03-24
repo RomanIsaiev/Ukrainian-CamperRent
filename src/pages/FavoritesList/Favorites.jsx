@@ -1,12 +1,12 @@
 import { FavoritesList } from "../../components/Favorites/FavoritesList";
+import { FavoritesListContainer } from "./FavoritesList.styled";
 
 export default function Favorite() {
   return (
     <>
-      <div>
-        <h2>Favorite</h2>
+      <FavoritesListContainer>
         <FavoritesList />
-      </div>
+      </FavoritesListContainer>
     </>
   );
 }
