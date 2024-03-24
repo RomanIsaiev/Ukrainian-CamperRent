@@ -57,7 +57,4 @@ export const GlobalStyle = createGlobalStyle`
         overflow: hidden;
     }
 
-    .activeFilter {
-        border: 2px solid #E44848;
-    }
 `;

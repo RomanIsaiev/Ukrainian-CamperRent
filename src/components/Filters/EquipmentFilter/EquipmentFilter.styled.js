@@ -33,6 +33,10 @@ export const Label = styled.label`
   border-radius: 10px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   mix-blend-mode: multiply;
+
+  &.activeFilter {
+    border: 2px solid #e44848;
+  }
 `;
 
 export const Checkbox = styled.input`
