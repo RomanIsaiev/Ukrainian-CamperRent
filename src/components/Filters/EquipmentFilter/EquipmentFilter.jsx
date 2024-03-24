@@ -44,7 +44,7 @@ export const EquipmentFilter = ({ onFilterChange }) => {
         {checkboxes.map((checkbox) => (
           <Label
             key={checkbox.name}
-            className={equipment[checkbox.name] ? "active" : ""}
+            className={equipment[checkbox.name] ? "activeFilter" : ""}
           >
             <Checkbox
               type="checkbox"
