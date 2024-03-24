@@ -84,6 +84,12 @@ export const Submit = styled.input`
   height: 56px;
 
   padding: 16px 60px;
+
+  cursor: pointer;
+
+  &:hover {
+    background: #d84343;
+  }
 `;
 
 export const Span = styled.span`

@@ -189,6 +189,10 @@ export const Button = styled.button`
 
   max-width: 166px;
   width: 100%;
+
+  &:hover {
+    background: #d84343;
+  }
 `;
 
 // favorite button
