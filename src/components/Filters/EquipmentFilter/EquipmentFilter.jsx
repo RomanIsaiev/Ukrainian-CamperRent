@@ -5,6 +5,7 @@ import {
   FilterContainer,
   Icon,
   Label,
+  Title,
 } from "./EquipmentFilter.styled";
 import sprite from "../../../assets/sprite.svg";
 
@@ -30,7 +31,7 @@ export const EquipmentFilter = ({ onFilterChange }) => {
 
   return (
     <div>
-      <h4>Vehicle equipment</h4>
+      <Title>Vehicle equipment</Title>
       <FilterContainer>
         <Label>
           <Checkbox
