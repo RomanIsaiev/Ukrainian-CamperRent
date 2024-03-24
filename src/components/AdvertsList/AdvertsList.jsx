@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchAdverts } from "../../redux/adverts/api.js";
 import { AdvertsItem } from "../AdvertsItem/AdvertsItem.jsx";
-import { List } from "./AdvertsList.styled.js";
+import { List, LoadButton } from "./AdvertsList.styled.js";
 
 export const AdvertsList = () => {
   const [page, setPage] = useState(1);
@@ -30,7 +30,7 @@ export const AdvertsList = () => {
 
       {responseAdverts.length >= page * limit &&
         responseAdverts.length % limit === 0 && (
-          <button onClick={handleLoadMore}>Load More</button>
+          <LoadButton onClick={handleLoadMore}>Load More</LoadButton>
         )}
     </div>
   );
