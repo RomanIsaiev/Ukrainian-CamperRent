@@ -1,17 +1,28 @@
-import { NavLink } from "react-router-dom";
-import { Item, List } from "./HeaderNav.styled";
+import { useLocation } from "react-router-dom";
+import { Item, List, StyledNavLink } from "./HeaderNav.styled";
 
 export const HeaderNav = () => {
+  const location = useLocation();
+
   return (
     <List>
       <Item>
-        <NavLink to="/">Home</NavLink>
+        <StyledNavLink to="/" active={location.pathname === "/"}>
+          Home
+        </StyledNavLink>
       </Item>
       <Item>
-        <NavLink to="catalog">Catalog</NavLink>
+        <StyledNavLink to="/catalog" active={location.pathname === "/catalog"}>
+          Catalog
+        </StyledNavLink>
       </Item>
       <Item>
-        <NavLink to="favorites">Favorites</NavLink>
+        <StyledNavLink
+          to="/favorites"
+          active={location.pathname === "/favorites"}
+        >
+          Favorites
+        </StyledNavLink>
       </Item>
     </List>
   );

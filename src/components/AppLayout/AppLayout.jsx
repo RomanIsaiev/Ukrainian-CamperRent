@@ -15,9 +15,7 @@ export const AppLayout = () => {
         />
       </Helmet>
       <GlobalStyle />
-      <header>
-        <Header />
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>

@@ -75,6 +75,10 @@ export const StyledNavLink = styled(RouterNavLink)`
 
   border-radius: 200px;
   background: #e44848;
+
+  &:hover {
+    background: #d84343;
+  }
 `;
 
 export const MotivationText = styled.p`
