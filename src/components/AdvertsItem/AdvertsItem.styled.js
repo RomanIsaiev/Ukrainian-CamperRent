@@ -99,6 +99,25 @@ export const Desc = styled.p`
   line-height: 24px; /* 150% */
 `;
 
+export const NameBox = styled.div`
+  max-width: 340px;
+`;
+
+export const Name = styled.h3`
+  overflow: hidden;
+  color: #101828;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 125% */
+
+  margin-bottom: 8px;
+`;
+
 //
 
 export const PriceFavoriteBox = styled.div`
@@ -121,18 +140,6 @@ export const Price = styled.p`
 `;
 
 //
-
-export const Name = styled.h3`
-  color: #101828;
-
-  font-family: Inter;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 30px; /* 125% */
-
-  margin-bottom: 8px;
-`;
 
 //
 

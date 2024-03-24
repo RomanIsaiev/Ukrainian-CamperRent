@@ -21,6 +21,7 @@ import {
   FavButton,
   FavIcon,
   PinIcon,
+  NameBox,
 } from "./AdvertsItem.styled";
 import sprite from "../../assets/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -107,7 +108,9 @@ export const AdvertsItem = ({ item }) => {
               )}
             </FavButton>
           </PriceFavoriteBox>
-          <Name>{item.name}</Name>
+          <NameBox>
+            <Name>{item.name}</Name>
+          </NameBox>
           <RatingLocationContainer>
             <RateLocInnerBox>
               <StarIcon>
