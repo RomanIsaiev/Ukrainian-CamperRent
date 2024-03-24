@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+![HomePage](./src/images/project-preview/HomePage.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ukrainian Camper Rental Application
 
-## Available Scripts
+This project is a web application developed for a company providing camper rental services in Ukraine. The application consists of three main pages:
 
-In the project directory, you can run:
+1. **Home Page**: Provides a general overview of the services offered by the company. The styling and design are implemented according to the preferences.
 
-### `npm start`
+2. **Catalog Page**: Displays a catalog of campers with various configurations that users can filter by location, equipment, and type.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Favorites Page**: Shows advertisements added by the user to their favorites list.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technical Specifications
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Developed using React.js with React Router for navigation.
+- State management is handled using Redux.
+- Axios library is used for making HTTP requests.
+- The UI is styled according to the provided designs, ensuring responsiveness and semantic markup.
 
-### `npm run build`
+### Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A custom backend is created using the UI service provided by [MockAPI](https://mockapi.io/).
+- The `adverts` resource is utilized to manage advertisements.
+- Each advertisement object includes details about the camper, such as location, equipment, type, and pricing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Advertisement Card**: Implemented according to the provided layout, with functionalities like adding to favorites, loading more advertisements, and showing detailed information in a modal.
+- **Favorites**: Users can add advertisements to their favorites list, and the state is maintained even after page refresh.
+- **Modal Window**: Displays detailed information about the camper, including its features, reviews, and a booking form.
+- **Form Validation**: Implemented validation for the booking form fields (name, email, booking date).
+- **Routing**: Utilized React Router for handling different routes such as home, catalog, and favorites. Invalid routes redirect to the home page.
+- **Search and Filters**: Added functionality to search for campers by location and filter by equipment and type.
 
-### `npm run eject`
+## Additional Task
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Deployment**: The project is deployed on [Netlify](https://ukrainian-camperrent.netlify.app/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository.
+2. Install dependencies using `npm install`.
+3. Start the development server using `npm start`.
+4. Access the application via the provided URL or navigate to `http://localhost:3000` in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contribution
 
-## Learn More
+Contributions to the project are welcome. Feel free to submit bug fixes, feature enhancements, or any other improvements via pull requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](LICENSE).
