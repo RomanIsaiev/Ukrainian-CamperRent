@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
+
+  margin-bottom: 32px;
 `;
 
 export const Label = styled.label`
@@ -13,8 +15,6 @@ export const Label = styled.label`
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 150% */
-
-  margin-bottom: 8px;
 `;
 
 export const Input = styled.input`
@@ -26,4 +26,6 @@ export const Input = styled.input`
 
   width: 360px;
   padding: 18px;
+
+  margin-top: 8px;
 `;

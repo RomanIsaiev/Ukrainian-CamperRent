@@ -11,6 +11,7 @@ import {
 } from "./AdvertsList.styled.js";
 import { LocationFilter } from "../Filters/LocationFilter/LocationFilter.jsx";
 import { EquipmentFilter } from "../Filters/EquipmentFilter/EquipmentFilter.jsx";
+import { VehicleTypeFilter } from "../Filters/VehicleTypeFilter/VehicleTypeFilter.jsx";
 
 export const AdvertsList = () => {
   const [page, setPage] = useState(1);
@@ -23,6 +24,7 @@ export const AdvertsList = () => {
     TV: false,
     bathroom: false,
   });
+  const [vehicleTypeFilter, setVehicleTypeFilter] = useState("");
   const allAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
 
@@ -43,13 +45,17 @@ export const AdvertsList = () => {
     const TVMatch = !equipmentFilter.TV || advert.details.TV > 0;
     const bathroomMatch =
       !equipmentFilter.bathroom || advert.details.bathroom > 0;
+    const vehicleTypeMatch =
+      !vehicleTypeFilter || advert.form === vehicleTypeFilter;
+
     return (
       locationMatch &&
       airConditionerMatch &&
       automaticTransmissionMatch &&
       kitchenMatch &&
       TVMatch &&
-      bathroomMatch
+      bathroomMatch &&
+      vehicleTypeMatch
     );
   });
 
@@ -67,12 +73,20 @@ export const AdvertsList = () => {
     setEquipmentFilter((prevFilter) => ({ ...prevFilter, ...newEquipment }));
   };
 
+  const handleVehicleTypeFilterChange = (newVehicleType) => {
+    setVehicleTypeFilter(newVehicleType);
+  };
+
   return (
     <MainContainer>
       <div>
         <LocationFilter onFilterChange={handleLocationFilterChange} />
         <Filters>Filters</Filters>
         <EquipmentFilter onFilterChange={handleEquipmentFilterChange} />
+        <VehicleTypeFilter
+          selectedVehicleType={vehicleTypeFilter}
+          onFilterChange={handleVehicleTypeFilterChange}
+        />
       </div>
       <div>
         <List>
