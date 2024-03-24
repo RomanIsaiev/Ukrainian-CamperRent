@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
         overflow: hidden;
     }
 
-      .active {
-          border: 2px solid #E44848;
-        }
+    .active {
+        border: 2px solid #E44848;
+    }
 `;
