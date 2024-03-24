@@ -37,7 +37,7 @@ export const Label = styled.label`
   border: 1px solid rgba(16, 24, 40, 0.2);
   mix-blend-mode: multiply;
 
-  &.activeType {
+  &.activeFilter {
     border: 2px solid #e44848;
   }
 `;

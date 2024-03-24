@@ -30,7 +30,7 @@ export const VehicleTypeFilter = ({ onFilterChange, selectedVehicleType }) => {
     <div>
       <Title>Vehicle Type</Title>
       <FilterContainer>
-        <Label>
+        <Label className={selectedVehicleType === "" ? "activeFilter" : ""}>
           <Radio
             type="radio"
             name="vehicleType"
@@ -46,7 +46,10 @@ export const VehicleTypeFilter = ({ onFilterChange, selectedVehicleType }) => {
           </Box>
         </Label>
         {vehicleTypes.map((type) => (
-          <Label key={type.name}>
+          <Label
+            key={type.name}
+            className={selectedVehicleType === type.name ? "activeFilter" : ""}
+          >
             <Radio
               type="radio"
               name="vehicleType"
