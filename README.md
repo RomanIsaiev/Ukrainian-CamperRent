@@ -40,6 +40,8 @@ This project is a web application developed for a company providing camper renta
 
 ### More photos of the project
 
+![HomePage](./src/images/project-preview/HomePage.png)
+
 ![Catalog](./src/images/project-preview/Catalog.png)
 
 ![Favorites](./src/images/project-preview/Favorites.png)
