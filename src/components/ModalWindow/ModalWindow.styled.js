@@ -21,9 +21,9 @@ export const Modal = styled.div`
   bottom: auto;
   margin-right: -50%;
 
-  padding: 40px;
+  padding: 40px 16px 40px 40px;
 
-  max-width: 902px;
+  max-width: 982px;
   width: 100%;
 
   transform: translate(-50%, -50%);

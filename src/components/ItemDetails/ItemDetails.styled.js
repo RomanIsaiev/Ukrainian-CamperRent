@@ -89,6 +89,8 @@ export const Desc = styled.p`
   line-height: 24px; /* 150% */
 
   margin-bottom: 44px;
+
+  max-width: 902px;
 `;
 
 //
@@ -223,15 +225,28 @@ export const ScrollBox = styled.div`
   overflow-y: scroll;
   overflow-x: hidden;
   height: 720px;
-  width: 100%;
+  max-width: 926px;
   padding-bottom: 40px;
+
+  
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color:#fff ;
+      border-radius: 7px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #D9D9D9;
+      border-radius: 7px;
+      height: 153px;
+    }
+  }
 `;
 
 export const NavList = styled.ul`
   display: flex;
   gap: 40px;
-
-  margin-bottom: 44px;
 `;
 
 export const StarIcon = styled.svg`
