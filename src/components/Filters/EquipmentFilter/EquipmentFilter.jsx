@@ -13,14 +13,13 @@ export const EquipmentFilter = ({ onFilterChange }) => {
     automaticTransmission: false,
     kitchen: false,
     TV: false,
-    bathroom: false, // Новый фильтр для душ или туалета
+    bathroom: false,
   });
 
   const handleEquipmentChange = (e) => {
     const { name, checked } = e.target;
     setEquipment((prevEquipment) => ({ ...prevEquipment, [name]: checked }));
 
-    // Если фильтр "bathroom" активен, передаем обратно объект с фильтрами
     if (name === "bathroom") {
       onFilterChange({ bathroom: checked });
     } else {
@@ -78,7 +77,6 @@ export const EquipmentFilter = ({ onFilterChange }) => {
         </Icon>
         <p>TV</p>
       </Label>
-      {/* Объединенный фильтр для душ или туалета */}
       <Label>
         <Checkbox
           type="checkbox"

@@ -20,7 +20,7 @@ export const AdvertsList = () => {
     automaticTransmission: false,
     kitchen: false,
     TV: false,
-    bathroom: false, // Новый фильтр для душ или туалета
+    bathroom: false,
   });
   const allAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
