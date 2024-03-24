@@ -2,7 +2,6 @@ import { ReviewsItem } from "../ReviewsItem/ReviewsItem";
 import { List } from "./ReviewsList.styled";
 
 export const ReviewsList = ({ item }) => {
-  console.log(item.reviews);
   return (
     <>
       <div>
