@@ -16,7 +16,6 @@ export const List = styled.ul`
 export const Item = styled.li``;
 
 export const StyledNavLink = styled(RouterNavLink)`
-  /* color: #101828; */
   color: ${(props) => (props.active ? "#fff" : "#101828")};
   font-family: Inter;
   font-size: 16px;
