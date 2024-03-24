@@ -9,100 +9,54 @@ import {
 } from "./EquipmentFilter.styled";
 import sprite from "../../../assets/sprite.svg";
 
+const initialEquipmentState = {
+  airConditioner: false,
+  automaticTransmission: false,
+  kitchen: false,
+  TV: false,
+  bathroom: false,
+};
+
+const checkboxes = [
+  { name: "airConditioner", label: "AC", icon: "ac" },
+  { name: "automaticTransmission", label: "Automatic", icon: "trans" },
+  { name: "kitchen", label: "Kitchen", icon: "kitchen" },
+  { name: "TV", label: "TV", icon: "tv" },
+  { name: "bathroom", label: "Bathroom", icon: "shower" },
+];
+
 export const EquipmentFilter = ({ onFilterChange }) => {
-  const [equipment, setEquipment] = useState({
-    airConditioner: false,
-    automaticTransmission: false,
-    kitchen: false,
-    TV: false,
-    bathroom: false,
-  });
+  const [equipment, setEquipment] = useState(initialEquipmentState);
 
   const handleEquipmentChange = (e) => {
     const { name, checked } = e.target;
     setEquipment((prevEquipment) => ({ ...prevEquipment, [name]: checked }));
 
-    if (name === "bathroom") {
-      onFilterChange({ bathroom: checked });
-    } else {
-      onFilterChange({ [name]: checked });
-    }
+    const filterData =
+      name === "bathroom" ? { bathroom: checked } : { [name]: checked };
+    onFilterChange(filterData);
   };
 
   return (
     <div>
       <Title>Vehicle equipment</Title>
       <FilterContainer>
-        <Label>
-          <Checkbox
-            type="checkbox"
-            name="airConditioner"
-            checked={equipment.airConditioner}
-            onChange={handleEquipmentChange}
-          />
-          <Box>
-            <Icon>
-              <use href={`${sprite}#ac`}></use>
-            </Icon>
-            <p>AC</p>
-          </Box>
-        </Label>
-        <Label>
-          <Checkbox
-            type="checkbox"
-            name="automaticTransmission"
-            checked={equipment.automaticTransmission}
-            onChange={handleEquipmentChange}
-          />
-          <Box>
-            <Icon>
-              <use href={`${sprite}#trans`}></use>
-            </Icon>
-            <p>Automatic</p>
-          </Box>
-        </Label>
-        <Label>
-          <Checkbox
-            type="checkbox"
-            name="kitchen"
-            checked={equipment.kitchen}
-            onChange={handleEquipmentChange}
-          />
-          <Box>
-            <Icon>
-              <use href={`${sprite}#kitchen`}></use>
-            </Icon>
-            <p>Kitchen</p>
-          </Box>
-        </Label>
-        <Label>
-          <Checkbox
-            type="checkbox"
-            name="TV"
-            checked={equipment.TV}
-            onChange={handleEquipmentChange}
-          />
-          <Box>
-            <Icon>
-              <use href={`${sprite}#tv`}></use>
-            </Icon>
-            <p>TV</p>
-          </Box>
-        </Label>
-        <Label>
-          <Checkbox
-            type="checkbox"
-            name="bathroom"
-            checked={equipment.bathroom}
-            onChange={handleEquipmentChange}
-          />
-          <Box>
-            <Icon>
-              <use href={`${sprite}#shower`}></use>
-            </Icon>
-            <p>Bathroom</p>
-          </Box>
-        </Label>
+        {checkboxes.map((checkbox) => (
+          <Label key={checkbox.name}>
+            <Checkbox
+              type="checkbox"
+              name={checkbox.name}
+              checked={equipment[checkbox.name]}
+              onChange={handleEquipmentChange}
+            />
+            <Box>
+              <Icon>
+                <use href={`${sprite}#${checkbox.icon}`}></use>
+              </Icon>
+              <p>{checkbox.label}</p>
+            </Box>
+          </Label>
+        ))}
       </FilterContainer>
     </div>
   );
