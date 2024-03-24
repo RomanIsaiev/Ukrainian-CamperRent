@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  Box,
   Checkbox,
   FilterContainer,
   Icon,
@@ -28,67 +29,80 @@ export const EquipmentFilter = ({ onFilterChange }) => {
   };
 
   return (
-    <FilterContainer>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="airConditioner"
-          checked={equipment.airConditioner}
-          onChange={handleEquipmentChange}
-        />
-        <Icon>
-          <use href={`${sprite}#ac`}></use>
-        </Icon>
-        <p>AC</p>
-      </Label>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="automaticTransmission"
-          checked={equipment.automaticTransmission}
-          onChange={handleEquipmentChange}
-        />
-        <Icon>
-          <use href={`${sprite}#trans`}></use>
-        </Icon>
-        <p>Automatic</p>
-      </Label>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="kitchen"
-          checked={equipment.kitchen}
-          onChange={handleEquipmentChange}
-        />
-        <Icon>
-          <use href={`${sprite}#kitchen`}></use>
-        </Icon>
-        <p>Kitchen</p>
-      </Label>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="TV"
-          checked={equipment.TV}
-          onChange={handleEquipmentChange}
-        />
-        <Icon>
-          <use href={`${sprite}#tv`}></use>
-        </Icon>
-        <p>TV</p>
-      </Label>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="bathroom"
-          checked={equipment.bathroom}
-          onChange={handleEquipmentChange}
-        />
-        <Icon>
-          <use href={`${sprite}#shower`}></use>
-        </Icon>
-        <p>Bathroom</p>
-      </Label>
-    </FilterContainer>
+    <div>
+      <h4>Vehicle equipment</h4>
+      <FilterContainer>
+        <Label>
+          <Checkbox
+            type="checkbox"
+            name="airConditioner"
+            checked={equipment.airConditioner}
+            onChange={handleEquipmentChange}
+          />
+          <Box>
+            <Icon>
+              <use href={`${sprite}#ac`}></use>
+            </Icon>
+            <p>AC</p>
+          </Box>
+        </Label>
+        <Label>
+          <Checkbox
+            type="checkbox"
+            name="automaticTransmission"
+            checked={equipment.automaticTransmission}
+            onChange={handleEquipmentChange}
+          />
+          <Box>
+            <Icon>
+              <use href={`${sprite}#trans`}></use>
+            </Icon>
+            <p>Automatic</p>
+          </Box>
+        </Label>
+        <Label>
+          <Checkbox
+            type="checkbox"
+            name="kitchen"
+            checked={equipment.kitchen}
+            onChange={handleEquipmentChange}
+          />
+          <Box>
+            <Icon>
+              <use href={`${sprite}#kitchen`}></use>
+            </Icon>
+            <p>Kitchen</p>
+          </Box>
+        </Label>
+        <Label>
+          <Checkbox
+            type="checkbox"
+            name="TV"
+            checked={equipment.TV}
+            onChange={handleEquipmentChange}
+          />
+          <Box>
+            <Icon>
+              <use href={`${sprite}#tv`}></use>
+            </Icon>
+            <p>TV</p>
+          </Box>
+        </Label>
+        <Label>
+          <Checkbox
+            type="checkbox"
+            name="bathroom"
+            checked={equipment.bathroom}
+            onChange={handleEquipmentChange}
+          />
+          <Box>
+            <Icon>
+              <use href={`${sprite}#shower`}></use>
+            </Icon>
+            <p>Bathroom</p>
+          </Box>
+        </Label>
+      </FilterContainer>
+    </div>
   );
 };

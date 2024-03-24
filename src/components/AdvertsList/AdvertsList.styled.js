@@ -54,3 +54,14 @@ export const NoResulst = styled.p`
   letter-spacing: -0.08px;
   width: 888px;
 `;
+
+export const Filters = styled.p`
+  color: #475467;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+
+  margin-bottom: 14px;
+`;

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchAdverts } from "../../redux/adverts/api.js";
 import { AdvertsItem } from "../AdvertsItem/AdvertsItem.jsx";
 import {
+  Filters,
   List,
   LoadButton,
   MainContainer,
@@ -70,6 +71,7 @@ export const AdvertsList = () => {
     <MainContainer>
       <div>
         <LocationFilter onFilterChange={handleLocationFilterChange} />
+        <Filters>Filters</Filters>
         <EquipmentFilter onFilterChange={handleEquipmentFilterChange} />
       </div>
       <div>
