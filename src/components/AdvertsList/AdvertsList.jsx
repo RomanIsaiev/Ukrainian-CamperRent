@@ -17,7 +17,7 @@ export const AdvertsList = () => {
   const [locationFilter, setLocationFilter] = useState("");
   const [equipmentFilter, setEquipmentFilter] = useState({
     airConditioner: false,
-    transmission: "",
+    automaticTransmission: false,
     kitchen: false,
     TV: false,
     shower: false,
@@ -36,9 +36,9 @@ export const AdvertsList = () => {
       .includes(locationFilter.toLowerCase());
     const airConditionerMatch =
       !equipmentFilter.airConditioner || advert.details.airConditioner > 0;
-    const transmissionMatch =
-      equipmentFilter.transmission === "" ||
-      advert.transmission === equipmentFilter.transmission;
+    const automaticTransmissionMatch =
+      !equipmentFilter.automaticTransmission ||
+      advert.transmission === "automatic";
     const kitchenMatch = !equipmentFilter.kitchen || advert.details.kitchen > 0;
     const TVMatch = !equipmentFilter.TV || advert.details.TV > 0;
     const showerMatch = !equipmentFilter.shower || advert.details.shower > 0;
@@ -46,7 +46,7 @@ export const AdvertsList = () => {
     return (
       locationMatch &&
       airConditionerMatch &&
-      transmissionMatch &&
+      automaticTransmissionMatch &&
       kitchenMatch &&
       TVMatch &&
       showerMatch &&
