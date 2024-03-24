@@ -24,6 +24,8 @@ export const StyledNavLink = styled(RouterNavLink)`
   line-height: 24px; /* 150% */
   letter-spacing: -0.08px;
 
+  height: 56px;
+
   padding: 16px 32px;
   border-radius: 200px;
   border: 1px solid rgba(71, 84, 103, 0.2);
