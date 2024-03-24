@@ -29,7 +29,7 @@ export const Welcome = () => {
                 src={require("../../images/welcome-page-image-1x.jpg")}
                 alt="man-holding-map"
                 width="862px"
-                height="618px"
+                height="507px"
               />
             </picture>
           </div>

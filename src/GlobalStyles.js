@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
         display: block;
         max-width: 100%;
         height: auto;
-        aspect-ratio: 4 / 3;
     }
 
     .container {

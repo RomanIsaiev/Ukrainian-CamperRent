@@ -91,7 +91,7 @@ export const MotivationText = styled.p`
   letter-spacing: -1.8px;
   text-transform: uppercase;
 
-  max-width: 441px;
+  max-width: 467px;
 
   margin-bottom: 20px;
 `;
