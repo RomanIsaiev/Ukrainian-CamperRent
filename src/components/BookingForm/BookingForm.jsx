@@ -19,7 +19,6 @@ export const BookingForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
     window.location.reload();
   };
 

@@ -77,7 +77,7 @@ export const AdvertsItem = ({ item }) => {
       );
       localStorage.setItem("favorites", JSON.stringify(newFavorites));
     } else {
-      dispatch(addFavorite(item)); // Передаем объект item целиком
+      dispatch(addFavorite(item));
       setIsFavorite(true);
       const storedFavorites =
         JSON.parse(localStorage.getItem("favorites")) || [];
