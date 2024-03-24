@@ -31,11 +31,7 @@ export const BookingForm = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           {errors.name && <Span>This field is required</Span>}
-          <Input
-            {...register("name", { required: true })}
-            placeholder="Name"
-            tabindex="1"
-          />
+          <Input {...register("name", { required: true })} placeholder="Name" />
         </label>
         <label>
           {errors.email && (
@@ -44,7 +40,6 @@ export const BookingForm = () => {
           <Input
             {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             placeholder="Email"
-            tabindex="2"
           />
         </label>
         <label>
@@ -53,13 +48,12 @@ export const BookingForm = () => {
             type="date"
             {...register("bookingDate", { required: true })}
             placeholder="Booking Date"
-            tabindex="3"
           />
         </label>
         <label>
           <TextAria {...register("comment")} placeholder="Comment" />
         </label>
-        <Submit type="submit" value="Send" tabindex="4" />
+        <Submit type="submit" value="Send" />
       </form>
     </MainContainer>
   );
