@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Input, Label, Container } from "./LocationFilter.styled";
 
 export const LocationFilter = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
@@ -10,11 +11,16 @@ export const LocationFilter = ({ onFilterChange }) => {
   };
 
   return (
-    <input
-      type="text"
-      placeholder="Filter by location"
-      value={location}
-      onChange={handleFilterChange}
-    />
+    <Container>
+      <Label>
+        Location
+        <Input
+          type="text"
+          placeholder="Filter by location"
+          value={location}
+          onChange={handleFilterChange}
+        />
+      </Label>
+    </Container>
   );
 };
