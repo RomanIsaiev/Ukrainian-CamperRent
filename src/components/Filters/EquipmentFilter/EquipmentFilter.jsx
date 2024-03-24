@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Checkbox, FilterContainer, Label } from "./EquipmentFilter.styled";
+import {
+  Checkbox,
+  FilterContainer,
+  Icon,
+  Label,
+} from "./EquipmentFilter.styled";
+import sprite from "../../../assets/sprite.svg";
 
 export const EquipmentFilter = ({ onFilterChange }) => {
   const [equipment, setEquipment] = useState({
@@ -7,14 +13,19 @@ export const EquipmentFilter = ({ onFilterChange }) => {
     automaticTransmission: false,
     kitchen: false,
     TV: false,
-    shower: false,
-    toilet: false,
+    bathroom: false, // Новый фильтр для душ или туалета
   });
 
   const handleEquipmentChange = (e) => {
     const { name, checked } = e.target;
     setEquipment((prevEquipment) => ({ ...prevEquipment, [name]: checked }));
-    onFilterChange({ [name]: checked });
+
+    // Если фильтр "bathroom" активен, передаем обратно объект с фильтрами
+    if (name === "bathroom") {
+      onFilterChange({ bathroom: checked });
+    } else {
+      onFilterChange({ [name]: checked });
+    }
   };
 
   return (
@@ -26,7 +37,10 @@ export const EquipmentFilter = ({ onFilterChange }) => {
           checked={equipment.airConditioner}
           onChange={handleEquipmentChange}
         />
-        Air Conditioner
+        <Icon>
+          <use href={`${sprite}#ac`}></use>
+        </Icon>
+        <p>AC</p>
       </Label>
       <Label>
         <Checkbox
@@ -35,7 +49,10 @@ export const EquipmentFilter = ({ onFilterChange }) => {
           checked={equipment.automaticTransmission}
           onChange={handleEquipmentChange}
         />
-        Automatic Transmission
+        <Icon>
+          <use href={`${sprite}#trans`}></use>
+        </Icon>
+        <p>Automatic</p>
       </Label>
       <Label>
         <Checkbox
@@ -44,7 +61,10 @@ export const EquipmentFilter = ({ onFilterChange }) => {
           checked={equipment.kitchen}
           onChange={handleEquipmentChange}
         />
-        Kitchen
+        <Icon>
+          <use href={`${sprite}#kitchen`}></use>
+        </Icon>
+        <p>Kitchen</p>
       </Label>
       <Label>
         <Checkbox
@@ -53,25 +73,23 @@ export const EquipmentFilter = ({ onFilterChange }) => {
           checked={equipment.TV}
           onChange={handleEquipmentChange}
         />
-        TV
+        <Icon>
+          <use href={`${sprite}#tv`}></use>
+        </Icon>
+        <p>TV</p>
       </Label>
+      {/* Объединенный фильтр для душ или туалета */}
       <Label>
         <Checkbox
           type="checkbox"
-          name="shower"
-          checked={equipment.shower}
+          name="bathroom"
+          checked={equipment.bathroom}
           onChange={handleEquipmentChange}
         />
-        Shower
-      </Label>
-      <Label>
-        <Checkbox
-          type="checkbox"
-          name="toilet"
-          checked={equipment.toilet}
-          onChange={handleEquipmentChange}
-        />
-        Toilet
+        <Icon>
+          <use href={`${sprite}#shower`}></use>
+        </Icon>
+        <p>Bathroom</p>
       </Label>
     </FilterContainer>
   );

@@ -20,8 +20,7 @@ export const AdvertsList = () => {
     automaticTransmission: false,
     kitchen: false,
     TV: false,
-    shower: false,
-    toilet: false,
+    bathroom: false, // Новый фильтр для душ или туалета
   });
   const allAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
@@ -41,16 +40,15 @@ export const AdvertsList = () => {
       advert.transmission === "automatic";
     const kitchenMatch = !equipmentFilter.kitchen || advert.details.kitchen > 0;
     const TVMatch = !equipmentFilter.TV || advert.details.TV > 0;
-    const showerMatch = !equipmentFilter.shower || advert.details.shower > 0;
-    const toiletMatch = !equipmentFilter.toilet || advert.details.toilet > 0;
+    const bathroomMatch =
+      !equipmentFilter.bathroom || advert.details.bathroom > 0;
     return (
       locationMatch &&
       airConditionerMatch &&
       automaticTransmissionMatch &&
       kitchenMatch &&
       TVMatch &&
-      showerMatch &&
-      toiletMatch
+      bathroomMatch
     );
   });
 
