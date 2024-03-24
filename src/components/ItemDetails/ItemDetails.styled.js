@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
 export const Modal = styled.div`
   position: relative;
@@ -243,4 +244,28 @@ export const StarIcon = styled.svg`
 export const PinIcon = styled.svg`
   width: 16px;
   height: 16px;
+`;
+
+//
+
+export const StyledNavLink = styled(RouterNavLink)`
+  color: #101828;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 120% */
+  text-transform: capitalize;
+
+  &.active::after {
+    content: "";
+    display: block;
+
+    height: 5px;
+    width: 100%;
+
+    background: #e44848;
+
+    margin-top: 24px;
+  }
 `;

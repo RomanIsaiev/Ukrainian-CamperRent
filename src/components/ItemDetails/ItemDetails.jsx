@@ -15,12 +15,16 @@ import {
   NavList,
   StarIcon,
   PinIcon,
+  StyledNavLink,
 } from "./ItemDetails.styled";
 
 import sprite from "../../assets/sprite.svg";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet, useMatch } from "react-router-dom";
 
 export const ItemDetails = ({ item, onClose }) => {
+  const featuresMatch = useMatch("/catalog/features");
+  const reviewsMatch = useMatch("/catalog/reviews");
+
   return (
     <Modal>
       <div>
@@ -63,10 +67,20 @@ export const ItemDetails = ({ item, onClose }) => {
         <div>
           <NavList>
             <li>
-              <NavLink to="features">features</NavLink>
+              <StyledNavLink
+                to="features"
+                className={featuresMatch ? "active" : ""}
+              >
+                features
+              </StyledNavLink>
             </li>
             <li>
-              <NavLink to="reviews">reviews</NavLink>
+              <StyledNavLink
+                to="reviews"
+                className={reviewsMatch ? "active" : ""}
+              >
+                reviews
+              </StyledNavLink>
             </li>
           </NavList>
         </div>
