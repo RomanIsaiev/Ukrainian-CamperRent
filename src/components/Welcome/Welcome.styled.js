@@ -10,7 +10,7 @@ export const TitleContainer = styled.div`
 
   max-width: 1158px;
 
-  margin-left: 64px;
+  margin-left: 28px;
 `;
 
 export const Title = styled.h1`
