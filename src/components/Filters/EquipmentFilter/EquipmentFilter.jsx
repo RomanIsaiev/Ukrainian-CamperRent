@@ -42,7 +42,10 @@ export const EquipmentFilter = ({ onFilterChange }) => {
       <Title>Vehicle equipment</Title>
       <FilterContainer>
         {checkboxes.map((checkbox) => (
-          <Label key={checkbox.name}>
+          <Label
+            key={checkbox.name}
+            className={equipment[checkbox.name] ? "active" : ""}
+          >
             <Checkbox
               type="checkbox"
               name={checkbox.name}

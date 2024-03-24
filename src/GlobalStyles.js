@@ -56,4 +56,8 @@ export const GlobalStyle = createGlobalStyle`
     .disable-scroll {
         overflow: hidden;
     }
+
+      .active {
+          border: 2px solid red;
+        }
 `;
