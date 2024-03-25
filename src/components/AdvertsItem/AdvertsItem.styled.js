@@ -163,6 +163,8 @@ export const CategoryText = styled.p`
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 125% */
+
+  text-transform: capitalize;
 `;
 
 export const Button = styled.button`
