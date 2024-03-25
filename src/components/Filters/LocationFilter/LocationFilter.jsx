@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Input, Label, Container } from "./LocationFilter.styled";
+import { Input, Label, Container, Icon } from "./LocationFilter.styled";
+import sprite from "../../../assets/sprite.svg";
 
 export const LocationFilter = ({ onFilterChange }) => {
   const [location, setLocation] = useState("");
@@ -20,6 +21,9 @@ export const LocationFilter = ({ onFilterChange }) => {
           value={location}
           onChange={handleFilterChange}
         />
+        <Icon>
+          <use href={`${sprite}#map-pin`} />
+        </Icon>
       </Label>
     </Container>
   );
