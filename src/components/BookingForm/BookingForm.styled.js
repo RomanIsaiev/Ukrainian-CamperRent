@@ -65,6 +65,7 @@ export const Data = styled.input`
   padding: 18px;
 
   margin-bottom: 14px;
+  color: rgba(16, 24, 40, 0.6);
 `;
 
 export const Submit = styled.input`
