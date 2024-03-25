@@ -2,7 +2,6 @@ import sprite from "../../assets/sprite.svg";
 import { Icon, List, Item, Box, ListContainer } from "./FeaturesList.styled";
 
 export const FeaturesList = ({ item }) => {
-  console.log(item);
   return (
     <ListContainer>
       <List>
