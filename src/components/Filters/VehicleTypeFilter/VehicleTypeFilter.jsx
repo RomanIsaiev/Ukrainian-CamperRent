@@ -40,7 +40,7 @@ export const VehicleTypeFilter = ({ onFilterChange, selectedVehicleType }) => {
           />
           <Box>
             <Icon>
-              <use href={`${sprite}#star`}></use>
+              <use href={`${sprite}#filter-star`}></use>
             </Icon>
             <Text>All</Text>
           </Box>
