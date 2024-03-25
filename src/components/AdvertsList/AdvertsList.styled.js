@@ -41,6 +41,10 @@ export const LoadButton = styled.button`
 
   border-radius: 200px;
   border: 1px solid rgba(71, 84, 103, 0.2);
+
+  &:hover {
+    border: 1px solid #e44848;
+  }
 `;
 
 export const NoResulst = styled.p`
