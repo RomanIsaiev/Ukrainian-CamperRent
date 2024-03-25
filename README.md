@@ -1,4 +1,4 @@
-![HomePage](./src/images/project-preview/HomePage.png)
+![HomePage](./src/images/project-preview/homepage.png)
 
 # Ukrainian Camper Rental Application
 
@@ -38,14 +38,32 @@ This project is a web application developed for a company providing camper renta
 
 - **Deployment**: The project is deployed on Netlify [https://ukrainian-camperrent.netlify.app/](https://ukrainian-camperrent.netlify.app/).
 
+## Technologies used:
+
+- JavaScript
+- React
+- HTML
+- CSS
+- Git
+- GitHub
+
+## Used libraries:
+
+- axios
+- react-redux
+- react-router-dom
+- styled-components
+
 ### More photos of the project
 
-![HomePage](./src/images/project-preview/HomePage.png)
+![HomePage](./src/images/project-preview/homepage.png)
 
 ![Catalog](./src/images/project-preview/Catalog.png)
 
 ![Favorites](./src/images/project-preview/Favorites.png)
 
-![Details-1](./src/images/project-preview/Details.png)
+![Details-1](./src/images/project-preview/Details1.png)
 
 ![Details-2](./src/images/project-preview/Details2.png)
+
+![Reviews](./src/images/project-preview/Reviews.png)
