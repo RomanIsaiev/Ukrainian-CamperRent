@@ -22,7 +22,7 @@ const checkboxes = [
   { name: "automaticTransmission", label: "Automatic", icon: "trans" },
   { name: "kitchen", label: "Kitchen", icon: "kitchen" },
   { name: "TV", label: "TV", icon: "tv" },
-  { name: "bathroom", label: "Bathroom", icon: "shower" },
+  { name: "bathroom", label: "Shower/WC", icon: "shower" },
 ];
 
 export const EquipmentFilter = ({ onFilterChange }) => {

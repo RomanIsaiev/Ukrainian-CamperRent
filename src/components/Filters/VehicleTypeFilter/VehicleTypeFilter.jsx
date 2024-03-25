@@ -11,7 +11,7 @@ import {
 import sprite from "../../../assets/sprite.svg";
 
 const vehicleTypes = [
-  { name: "panelTruck", label: "Panel Truck", icon: "van" },
+  { name: "panelTruck", label: "Van", icon: "van" },
   {
     name: "fullyIntegrated",
     label: "Fully Integrated",
