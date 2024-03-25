@@ -78,8 +78,6 @@ export const InfoBox = styled.div`
   height: 310px;
 `;
 
-//
-
 export const DescContainer = styled.div`
   max-width: 525px;
 
@@ -118,8 +116,6 @@ export const Name = styled.h3`
   margin-bottom: 8px;
 `;
 
-//
-
 export const PriceFavoriteBox = styled.div`
   position: absolute;
   top: 24px;
@@ -138,10 +134,6 @@ export const Price = styled.p`
   font-weight: 600;
   line-height: 30px; /* 125% */
 `;
-
-//
-
-//
 
 export const CategoryList = styled.ul`
   display: flex;
@@ -175,8 +167,6 @@ export const CategoryText = styled.p`
   line-height: 20px; /* 125% */
 `;
 
-//
-
 export const Button = styled.button`
   display: block;
 
@@ -201,8 +191,6 @@ export const Button = styled.button`
     background: #d84343;
   }
 `;
-
-// favorite button
 
 export const FavButton = styled.button`
   background: none;

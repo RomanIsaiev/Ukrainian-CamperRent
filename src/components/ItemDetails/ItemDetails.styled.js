@@ -228,19 +228,17 @@ export const ScrollBox = styled.div`
   max-width: 926px;
   padding-bottom: 40px;
 
-  
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      background-color:#fff ;
-      border-radius: 7px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #D9D9D9;
-      border-radius: 7px;
-      height: 153px;
-    }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #d9d9d9;
+    border-radius: 7px;
+    height: 153px;
   }
 `;
 
@@ -271,6 +269,14 @@ export const StyledNavLink = styled(RouterNavLink)`
   font-weight: 600;
   line-height: 24px; /* 120% */
   text-transform: capitalize;
+
+  &:hover {
+    color: #e44848;
+  }
+
+  &.active {
+    color: #e44848;
+  }
 
   &.active::after {
     content: "";

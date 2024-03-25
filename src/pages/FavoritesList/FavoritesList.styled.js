@@ -5,4 +5,5 @@ export const FavoritesListContainer = styled.div`
   margin: 0 auto;
   padding-left: 64px;
   padding-right: 64px;
+  padding-bottom: 40px;
 `;
