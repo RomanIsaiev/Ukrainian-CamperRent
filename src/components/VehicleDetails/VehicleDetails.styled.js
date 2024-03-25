@@ -34,3 +34,23 @@ export const Item = styled.li`
   display: flex;
   justify-content: space-between;
 `;
+
+export const ItemTitle = styled.p`
+  color: #101828;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+`;
+
+export const ItemText = styled.p`
+  color: #101828;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 133.333% */
+`;

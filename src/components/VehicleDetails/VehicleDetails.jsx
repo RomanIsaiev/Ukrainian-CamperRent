@@ -1,4 +1,11 @@
-import { Item, List, MainContainer, Title } from "./VehicleDetails.styled";
+import {
+  Item,
+  ItemText,
+  ItemTitle,
+  List,
+  MainContainer,
+  Title,
+} from "./VehicleDetails.styled";
 
 export const VehicleDetails = ({ item }) => {
   return (
@@ -7,28 +14,28 @@ export const VehicleDetails = ({ item }) => {
       <div>
         <List>
           <Item>
-            <p>Form</p>
-            <p>{item.form}</p>
+            <ItemTitle>Form</ItemTitle>
+            <ItemText>{item.form}</ItemText>
           </Item>
           <Item>
-            <p>Length</p>
-            <p>{item.length}</p>
+            <ItemTitle>Length</ItemTitle>
+            <ItemText>{item.length}</ItemText>
           </Item>
           <Item>
-            <p>Width</p>
-            <p>{item.width}</p>
+            <ItemTitle>Width</ItemTitle>
+            <ItemText>{item.width}</ItemText>
           </Item>
           <Item>
-            <p>Height</p>
-            <p>{item.height}</p>
+            <ItemTitle>Height</ItemTitle>
+            <ItemText>{item.height}</ItemText>
           </Item>
           <Item>
-            <p>Tank</p>
-            <p>{item.tank}</p>
+            <ItemTitle>Tank</ItemTitle>
+            <ItemText>{item.tank}</ItemText>
           </Item>
           <Item>
-            <p>Consumption</p>
-            <p>{item.consumption}</p>
+            <ItemTitle>Consumption</ItemTitle>
+            <ItemText>{item.consumption}</ItemText>
           </Item>
         </List>
       </div>
