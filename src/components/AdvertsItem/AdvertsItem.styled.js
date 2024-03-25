@@ -30,8 +30,6 @@ export const PinIcon = styled.svg`
 export const CategoriesIcon = styled.svg`
   width: 20px;
   height: 20px;
-  fill: #101010;
-  stroke: #101010;
 `;
 
 export const RateLocText = styled.p`

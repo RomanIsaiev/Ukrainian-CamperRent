@@ -8,7 +8,6 @@ export const ListContainer = styled.div`
 export const Icon = styled.svg`
   width: 20px;
   height: 20px;
-  stroke: #101010;
 `;
 
 export const List = styled.ul`
