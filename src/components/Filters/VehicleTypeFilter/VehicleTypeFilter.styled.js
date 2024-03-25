@@ -7,6 +7,8 @@ export const FilterContainer = styled.div`
 
   width: 360px;
 
+  margin-bottom: 64px;
+
   &::before {
     content: "";
     display: block;

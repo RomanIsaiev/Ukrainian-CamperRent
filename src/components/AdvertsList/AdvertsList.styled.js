@@ -69,3 +69,29 @@ export const Filters = styled.p`
 
   margin-bottom: 14px;
 `;
+
+export const SeacrhButton = styled.button`
+  display: block;
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.08px;
+
+  padding: 16px;
+
+  max-width: 173px;
+  width: 100%;
+
+  height: 56px;
+
+  border: none;
+  border-radius: 200px;
+  background: #e44848;
+
+  &:hover {
+    background: #d84343;
+  }
+`;

@@ -8,6 +8,7 @@ import {
   LoadButton,
   MainContainer,
   NoResulst,
+  SeacrhButton,
 } from "./AdvertsList.styled.js";
 import { LocationFilter } from "../Filters/LocationFilter/LocationFilter.jsx";
 import { EquipmentFilter } from "../Filters/EquipmentFilter/EquipmentFilter.jsx";
@@ -25,6 +26,7 @@ export const AdvertsList = () => {
     bathroom: false,
   });
   const [vehicleTypeFilter, setVehicleTypeFilter] = useState("");
+  const [filteredAdverts, setFilteredAdverts] = useState([]);
   const allAdverts = useSelector((state) => state.adverts.items);
   const dispatch = useDispatch();
 
@@ -32,32 +34,9 @@ export const AdvertsList = () => {
     dispatch(fetchAdverts({ page, limit }));
   }, [dispatch, limit, page]);
 
-  const filteredAdverts = allAdverts.filter((advert) => {
-    const locationMatch = advert.location
-      .toLowerCase()
-      .includes(locationFilter.toLowerCase());
-    const airConditionerMatch =
-      !equipmentFilter.airConditioner || advert.details.airConditioner > 0;
-    const automaticTransmissionMatch =
-      !equipmentFilter.automaticTransmission ||
-      advert.transmission === "automatic";
-    const kitchenMatch = !equipmentFilter.kitchen || advert.details.kitchen > 0;
-    const TVMatch = !equipmentFilter.TV || advert.details.TV > 0;
-    const bathroomMatch =
-      !equipmentFilter.bathroom || advert.details.bathroom > 0;
-    const vehicleTypeMatch =
-      !vehicleTypeFilter || advert.form === vehicleTypeFilter;
-
-    return (
-      locationMatch &&
-      airConditionerMatch &&
-      automaticTransmissionMatch &&
-      kitchenMatch &&
-      TVMatch &&
-      bathroomMatch &&
-      vehicleTypeMatch
-    );
-  });
+  useEffect(() => {
+    setFilteredAdverts(allAdverts);
+  }, [allAdverts]);
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
@@ -77,6 +56,47 @@ export const AdvertsList = () => {
     setVehicleTypeFilter(newVehicleType);
   };
 
+  const handleSearch = () => {
+    const filteredList = allAdverts.filter((advert) => {
+      const locationMatch = locationFilter
+        ? advert.location.toLowerCase().includes(locationFilter.toLowerCase())
+        : true;
+
+      const airConditionerMatch = equipmentFilter.airConditioner
+        ? advert.details.airConditioner > 0
+        : true;
+
+      const automaticTransmissionMatch = equipmentFilter.automaticTransmission
+        ? advert.transmission === "automatic"
+        : true;
+
+      const kitchenMatch = equipmentFilter.kitchen
+        ? advert.details.kitchen > 0
+        : true;
+
+      const TVMatch = equipmentFilter.TV ? advert.details.TV > 0 : true;
+
+      const bathroomMatch = equipmentFilter.bathroom
+        ? advert.details.bathroom > 0
+        : true;
+
+      const vehicleTypeMatch = vehicleTypeFilter
+        ? advert.form === vehicleTypeFilter
+        : true;
+
+      return (
+        locationMatch &&
+        airConditionerMatch &&
+        automaticTransmissionMatch &&
+        kitchenMatch &&
+        TVMatch &&
+        bathroomMatch &&
+        vehicleTypeMatch
+      );
+    });
+    setFilteredAdverts(filteredList);
+  };
+
   return (
     <MainContainer>
       <div>
@@ -87,6 +107,7 @@ export const AdvertsList = () => {
           selectedVehicleType={vehicleTypeFilter}
           onFilterChange={handleVehicleTypeFilterChange}
         />
+        <SeacrhButton onClick={handleSearch}>Search</SeacrhButton>
       </div>
       <div>
         <List>
