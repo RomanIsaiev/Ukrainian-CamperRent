@@ -40,8 +40,6 @@ export const Initial = styled.span`
   line-height: 30px; /* 125% */
 `;
 
-//
-
 export const UserContainer = styled.div`
   display: flex;
   align-items: center;

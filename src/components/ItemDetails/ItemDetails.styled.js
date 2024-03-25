@@ -42,10 +42,6 @@ export const RateLocText = styled.p`
   text-decoration-line: underline;
 `;
 
-//
-
-// gallerylist
-
 export const Gallery = styled.ul`
   display: flex;
   align-items: center;
@@ -71,8 +67,6 @@ export const InfoBox = styled.div`
   height: 310px;
 `;
 
-//
-
 export const DescContainer = styled.div`
   max-width: 525px;
 
@@ -92,8 +86,6 @@ export const Desc = styled.p`
 
   max-width: 902px;
 `;
-
-//
 
 export const PriceFavoriteBox = styled.div`
   position: absolute;
@@ -116,8 +108,6 @@ export const Price = styled.p`
   margin-bottom: 24px;
 `;
 
-//
-
 export const Name = styled.h3`
   color: #101828;
 
@@ -129,8 +119,6 @@ export const Name = styled.h3`
 
   margin-bottom: 10px;
 `;
-
-//
 
 export const CategoryList = styled.ul`
   display: flex;
@@ -164,8 +152,6 @@ export const CategoryText = styled.p`
   line-height: 20px; /* 125% */
 `;
 
-//
-
 export const Button = styled.button`
   display: block;
 
@@ -187,8 +173,6 @@ export const Button = styled.button`
   width: 100%;
 `;
 
-// favorite button
-
 export const FavButton = styled.button`
   background: none;
   border: none;
@@ -198,8 +182,6 @@ export const FavIcon = styled.svg`
   width: 24px;
   height: 24px;
 `;
-
-// close button
 
 export const CloseBtn = styled.button`
   position: absolute;
@@ -258,8 +240,6 @@ export const PinIcon = styled.svg`
   width: 16px;
   height: 16px;
 `;
-
-//
 
 export const StyledNavLink = styled(RouterNavLink)`
   color: #101828;

@@ -4,12 +4,12 @@ import { GlobalStyle } from "../../GlobalStyles";
 
 export const AppLayout = () => {
   return (
-    <div>
+    <>
       <GlobalStyle />
       <Header />
       <main>
         <Outlet />
       </main>
-    </div>
+    </>
   );
 };

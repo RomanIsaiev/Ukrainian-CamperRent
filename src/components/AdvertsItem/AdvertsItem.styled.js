@@ -42,8 +42,6 @@ export const RateLocText = styled.p`
   text-decoration-line: underline;
 `;
 
-//
-
 export const Item = styled.li`
   position: relative;
 

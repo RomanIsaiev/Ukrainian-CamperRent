@@ -44,8 +44,6 @@ export const SubTitle = styled.p`
   max-width: 263px;
 `;
 
-//
-
 export const StartContainer = styled.div`
   position: relative;
 
